@@ -1,5 +1,4 @@
 <?php
-// Eingabe übernehmen
 $bewertung = $_POST['bewertung'] ?? '';
 $gueltigeBewertungen = ['gut', 'schlecht'];
 
@@ -10,7 +9,7 @@ if (!in_array($bewertung, $gueltigeBewertungen, true)) {
     $bewertungText = $bewertung === 'gut' ? 'Gut' : 'Schlecht';
 }
 ?>
-<!-- Feedback-Seite erzeugen -->
+
 <!doctype html>
 <html lang="de">
 <head>
@@ -25,14 +24,14 @@ if (!in_array($bewertung, $gueltigeBewertungen, true)) {
 </body>
 </html>
 <?php
-// Aktion anstoßen
+
 if (in_array($bewertung, $gueltigeBewertungen, true)) {
-  exec('pinctrl set 17 op dl');
-  exec('pinctrl set 27 op dl');
+  exec('pinctrl set 4 op dl');
+  exec('pinctrl set 26 op dl');
   if ($bewertung === 'gut') {
-    exec('pinctrl set 17 op dh');
+    exec('pinctrl set 4 op dh');
   } else {
-    exec('pinctrl set 27 op dh');
+    exec('pinctrl set 26 op dh');
   }
 }
 ?>
