@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pizzadienst bewerten</title>
+</head>
+<body>
+	<h1>Pizzadienst bewerten</h1>
+	<form action="feedback.php" method="post">
+		<fieldset>
+			<legend>Wie war die Lieferzeit?</legend>
+			<label><input type="radio" name="bewertung" value="gut" required> Gut</label>
+			<label><input type="radio" name="bewertung" value="schlecht"> Schlecht</label>
+		</fieldset>
+		<button type="submit">Bewertung absenden</button>
+	</form>
+</body>
+</html>
